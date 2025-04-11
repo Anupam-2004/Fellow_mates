@@ -1,152 +1,240 @@
 //Smart Academic ERP for Seamless Campus Management
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Academic ERP App</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 20px;
-            background-color:Edge 12, Firefox 1, Safari 1, Chrome 1, IE 4, Opera 3;
-
-Syntax: <color>;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #c82121;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1, h2 {
-            color: #333;
-            text-align: center;
-        }
-
-        .section {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-
-        .feature-list {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
-        .benefit-list {
-            list-style-type: square;
-            margin-left: 20px;
-        }
-
-        .provider-list {
-            list-style-type: decimal;
-            margin-left: 20px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
-
-        .image-placeholder {
-            width: 100%;
-            max-height: 200px;
-            background-color: #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #777;
-            font-style: italic;
-            margin-bottom: 15px;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Academic ERP</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Smart Academic ERP App for Seamless Campus Management</h1>
-
-        <div class="image-placeholder">
-            [App Interface Mockup / Logo Here]
+      <!-- Sidebar -->
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <h2>EduPortal</h2>
+          <button id="toggle-sidebar" class="toggle-sidebar-btn">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li class="active">
+              <a href="#dashboard"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+            </li>
+            <li>
+              <a href="#courses"><i class="fas fa-book"></i> <span>Courses</span></a>
+            </li>
+            <li>
+              <a href="#attendance"><i class="fas fa-calendar"></i> <span>Attendance</span></a>
+            </li>
+            <li>
+              <a href="#grades"><i class="fas fa-graduation-cap"></i> <span>Grades</span></a>
+            </li>
+            <li>
+              <a href="#assignments"><i class="fas fa-tasks"></i> <span>Assignments</span></a>
+            </li>
+            <li>
+              <a href="#notifications"><i class="fas fa-bell"></i> <span>Notifications</span></a>
+            </li>
+            <li>
+              <a href="#profile"><i class="fas fa-user"></i> <span>Profile</span></a>
+            </li>
+            <li>
+              <a href="#settings"><i class="fas fa-cog"></i> <span>Settings</span></a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
-        <section class="section">
-            <h2>Key Features</h2>
-            <ul class="feature-list">
-                <li><strong>Student Information Management:</strong> Centralized records, profiles, attendance tracking.</li>
-                <li><strong>Admission Management:</strong> Online applications, status tracking, merit lists.</li>
-                <li><strong>Attendance Management:</strong> Digital marking, automated reports, parent notifications.</li>
-                <li><strong>Timetable Management:</strong> Schedule creation, teacher allocation, easy viewing.</li>
-                <li><strong>Examination and Grading:</strong> Online/offline exams, mark entry, report cards.</li>
-                <li><strong>Fee Management:</strong> Online payments, due tracking, automated reminders.</li>
-                <li><strong>Communication and Collaboration:</strong> Messaging, notifications, parent portal.</li>
-                <li><strong>Learning Management System (LMS) Integration:</strong> Study materials, assignments, online classes.</li>
-                <li><strong>Library Management:</strong> Cataloging, issue/return tracking, fine management.</li>
-                <li><strong>Hostel Management:</strong> Resident data, fee management, attendance (if applicable).</li>
-                <li><strong>Transport Management:</strong> Route management, tracking, fee management (if applicable).</li>
-                <li><strong>Human Resources (HR) and Payroll Management:</strong> Staff records, attendance, payroll.</li>
-                <li><strong>Financial Accounting:</strong> Income/expense management, financial reports.</li>
-                <li><strong>Reporting and Analytics:</strong> Customizable reports, data analysis dashboards.</li>
-                <li><strong>Security and Data Backup:</strong> Secure storage, regular backups.</li>
-                <li><strong>Multi-language Support:</strong> Accessibility in multiple languages.</li>
-            </ul>
-        </section>
+      <!-- Main content -->
+      <main class="main-content">
+        <!-- Navbar -->
+        <header class="navbar">
+          <div class="navbar-left">
+            <button id="mobile-menu" class="mobile-menu-btn">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+          <div class="navbar-search">
+            <div class="search-wrapper">
+              <i class="fas fa-search"></i>
+              <input type="search" placeholder="Search..." />
+            </div>
+          </div>
+          <div class="navbar-right">
+            <button class="notification-btn">
+              <i class="fas fa-bell"></i>
+              <span class="notification-badge"></span>
+            </button>
+            <div class="user-avatar">
+              <img src="https://via.placeholder.com/40" alt="User" id="user-avatar" />
+            </div>
+          </div>
+        </header>
 
-        <section class="section">
-            <h2>Benefits</h2>
-            <ul class="benefit-list">
-                <li>Centralized Data Management</li>
-                <li>Improved Efficiency</li>
-                <li>Enhanced Communication</li>
-                <li>Better Decision-Making</li>
-                <li>Streamlined Administrative Processes</li>
-                <li>Increased Transparency</li>
-                <li>Cost-Effective</li>
-                <li>Improved Resource Management</li>
-                <li>Enhanced Student Experience</li>
-                <li>Scalability</li>
-                <li>Real-time Information Access</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Potential Providers</h2>
-            <p>Here are some examples of Smart Academic ERP app providers:</p>
-            <ol class="provider-list">
-                <li>Jupsoft</li>
-                <li>Fedena</li>
-                <li>Edunext Technologies</li>
-                <li>Entab CampusCare</li>
-                <li>Smart School ERP</li>
-                <li>SWEEDU Edutech</li>
-                <li>Creatrix Campus</li>
-                <li>Focus Softnet</li>
-                <li>Vidyalaya School Software</li>
-                </ol>
-            <p>It's recommended to research and compare different providers to find the best fit for your institution's needs.</p>
-        </section>
-
-        <div style="text-align: center;">
-            <a href="#" class="button">Learn More</a>
-            <a href="#" class="button">Request a Demo</a>
+        <!-- Dashboard content -->
+        <div class="content-wrapper" id="content-wrapper">
+          <h1>Student Dashboard</h1>
+          
+          <div class="dashboard-grid">
+            <!-- Left column -->
+            <div class="dashboard-column main-column">
+              <!-- Announcements -->
+              <div class="card">
+                <div class="card-header">
+                  <i class="fas fa-bell"></i>
+                  <h2>Announcements</h2>
+                </div>
+                <div class="card-content">
+                  <div class="announcement">
+                    <div class="announcement-header">
+                      <h3>End of Semester Exams</h3>
+                      <span class="badge">Apr 10</span>
+                    </div>
+                    <p>Final exams will begin on June 15th. Please check your schedule.</p>
+                    <small>Posted by: Academic Office</small>
+                  </div>
+                  <div class="announcement">
+                    <div class="announcement-header">
+                      <h3>Library Closure</h3>
+                      <span class="badge">Apr 9</span>
+                    </div>
+                    <p>The library will be closed for maintenance on April 20th.</p>
+                    <small>Posted by: Library Department</small>
+                  </div>
+                  <div class="announcement">
+                    <div class="announcement-header">
+                      <h3>Sports Day</h3>
+                      <span class="badge">Apr 8</span>
+                    </div>
+                    <p>Annual sports day is scheduled for May 5th. All students are encouraged to participate.</p>
+                    <small>Posted by: Sports Committee</small>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Courses -->
+              <div class="card">
+                <div class="card-header">
+                  <i class="fas fa-book"></i>
+                  <h2>Enrolled Courses</h2>
+                </div>
+                <div class="card-content">
+                  <div class="courses-grid" id="courses-container">
+                    <!-- Courses will be added via JavaScript -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Right column -->
+            <div class="dashboard-column side-column">
+              <!-- Profile -->
+              <div class="card">
+                <div class="card-header">
+                  <h2>Profile</h2>
+                  <button class="icon-btn">
+                    <i class="fas fa-pencil-alt"></i>
+                  </button>
+                </div>
+                <div class="card-content profile-card">
+                  <div class="profile-avatar">
+                    <img src="https://via.placeholder.com/80" alt="John Smith" />
+                  </div>
+                  <div class="profile-info">
+                    <h3>John Smith</h3>
+                    <p>STU20250411</p>
+                  </div>
+                  <div class="profile-details">
+                    <div class="detail-row">
+                      <span class="detail-label">Department:</span>
+                      <span class="detail-value">Computer Science</span>
+                    </div>
+                    <div class="detail-row">
+                      <span class="detail-label">Year:</span>
+                      <span class="detail-value">3rd Year</span>
+                    </div>
+                    <div class="detail-row">
+                      <span class="detail-label">Email:</span>
+                      <span class="detail-value">john.smith@example.edu</span>
+                    </div>
+                    <div class="detail-row">
+                      <span class="detail-label">Phone:</span>
+                      <span class="detail-value">(555) 123-4567</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Attendance -->
+              <div class="card">
+                <div class="card-header">
+                  <i class="fas fa-calendar"></i>
+                  <h2>Attendance</h2>
+                </div>
+                <div class="card-content">
+                  <div class="attendance-stats">
+                    <div class="attendance-rate">
+                      <div class="rate-label">
+                        <span>Attendance Rate</span>
+                        <span>85%</span>
+                      </div>
+                      <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                      </div>
+                    </div>
+                    <div class="attendance-summary">
+                      <div class="attendance-box present">
+                        <span class="box-label">Present</span>
+                        <span class="box-value">85</span>
+                      </div>
+                      <div class="attendance-box absent">
+                        <span class="box-label">Absent</span>
+                        <span class="box-value">5</span>
+                      </div>
+                      <div class="attendance-box excused">
+                        <span class="box-label">Excused</span>
+                        <span class="box-value">10</span>
+                      </div>
+                    </div>
+                    <div class="recent-attendance">
+                      <h4>Recent Attendance</h4>
+                      <div class="attendance-log" id="attendance-log">
+                        <!-- Attendance records will be added via JavaScript -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Grades -->
+              <div class="card">
+                <div class="card-header">
+                  <i class="fas fa-graduation-cap"></i>
+                  <h2>Grades</h2>
+                </div>
+                <div class="card-content">
+                  <div class="gpa-display">
+                    <div class="gpa-circle">
+                      <span>3.75</span>
+                    </div>
+                  </div>
+                  <div class="grades-list">
+                    <h4>Current Courses</h4>
+                    <div class="grades-table" id="grades-table">
+                      <!-- Grades will be added via JavaScript -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </main>
     </div>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
